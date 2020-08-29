@@ -1,0 +1,427 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(243, 241, 231);
+}
+
+img {
+    margin: 0 auto 2em;
+    height: 150px;
+    width: 300px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.gallery-container img:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.bg-delete, .bg-upload, .bg-success, .bg-error {
+    padding: .5em;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.bg-upload {
+    background: rgb(13, 30, 78, .8);
+    color: white;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    justify-self: center;
+    font-weight: 700;
+}
+
+.bg-upload span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.bg-upload span:after {
+    font-family: "Font Awesome 5 Free";
+    content: '\f0aa';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    color: white;
+}
+
+.bg-upload:hover span {
+    padding-right: 25px;
+    color: white;
+}
+
+.bg-upload:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.bg-success {
+    background-color: rgb(14, 184, 14);
+    color: white;
+    width: 100%;
+}
+
+.bg-error {
+    background-color: #a81602;
+    color: white;
+    width: 100%;
+}
+
+.bg-delete {
+    border-radius: 4px;
+    background-color: rgb(66, 74, 92);
+    color: #FFFFFF;
+    width: 230px;
+    transition: all 0.5s;
+    cursor: pointer;
+    justify-self: center;
+    font-weight: 700;
+    position: absolute;
+    margin-left: .6em;
+}
+
+.bg-delete span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.bg-delete span:after {
+    font-family: "Font Awesome 5 Free";
+    content: '\f2ed';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    color: white;
+}
+
+.bg-delete:hover span {
+    padding-right: 25px;
+    color: white;
+}
+
+.bg-delete:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.gallery-container {
+    margin-bottom: 5em;
+}
+
+.gallery-container img {
+    background: #ffffff;
+    border: 1px solid #c2bdbd;
+    padding: 15px 15px 60px 15px;
+    border-radius: 7px;
+    width: 230px;
+    height: 230px;
+    margin: 3em 10px 1em;
+    text-decoration: none;
+    position: relative;
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.1);
+    -webkit-clip-path: polygon(10% 0, 0 10%, 0% 100%, 90% 100%, 100% 90%, 100% 0%);
+    transition: transform .2s;
+}
+
+.container {
+    padding: 50px 10%;
+    max-width: 1200px;
+}
+
+.box {
+    position: relative;
+    /* background: #ffffff; */
+    width: 100%;
+}
+
+.box-header {
+    color: #444;
+    display: block;
+    /* background-color: rgb(243, 241, 231); */
+    padding: 10px;
+    position: relative;
+    /* border-bottom: 1px solid #f4f4f4; */
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.box-tools {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.dropzone-wrapper {
+    border: 5px double rgb(66, 74, 92);
+    color: #92b0b3;
+    position: relative;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.dropzone-desc {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 40%;
+    top: 30px;
+    font-size: 16px;
+}
+
+.dropzone, .dropzone:focus {
+    position: absolute;
+    outline: none !important;
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.dropzone-wrapper:hover, .dropzone-wrapper.dragover {
+    background: #ecf0f5;
+    opacity: .5;
+}
+
+.preview-zone {
+    text-align: center;
+}
+
+.preview-zone .box {
+    box-shadow: none;
+    border-radius: 10px;
+    margin-bottom: 0;
+    /* background: rgb(243, 241, 231); */
+}
+
+#logout, #content {
+    /* set initial display to none */
+    display: none;
+}
+
+#login {
+    display: inline block;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    position: absolute;
+    right: 6em;
+    top: 1.5em;
+}
+
+#logout, #register {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    position: absolute;
+    right: 1.5em;
+    top: 1.5em;
+}
+
+#showPassword {
+    text-decoration: underline;
+}
+
+#showPassword:hover {
+    cursor: pointer;
+}
+
+.form, .form-register {
+    background: rgb(255, 255, 255, .5);
+    width: 500px;
+    padding: 2em;
+    border: 5px solid rgb(66, 74, 92);
+    border-radius: 10px;
+}
+
+.form {
+    margin: 2em auto;
+}
+
+.form-register {
+    margin: 2em auto 10vh;
+}
+
+.form input, .form-register input, .form label, .form-register label, .form span, .form-register span {
+    position: relative;
+    left: 25%;
+    font-weight: 700;
+    color: rgb(63, 58, 58);
+    border-radius: 5px;
+    margin-bottom: -2em;
+}
+
+.form h2, .form-register h2 {
+    margin: 0 auto;
+    position: relative;
+    left: 15%;
+}
+
+.site-nav {
+    background: rgb(66, 74, 92);
+    width: 100%;
+    height: 75px;
+    margin-bottom: 10vh;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 200px 450px 1fr 1fr 50px;
+    grid-template-areas: "brand . faux . log";
+    border-bottom: 3px solid rgb(14, 14, 104, .2);
+}
+
+.faux-nav {
+    grid-area: faux;
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.faux-nav a {
+    color: white;
+    font-weight: 700;
+    margin-top: 1.5em;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+/* .bg-upload {
+    background: rgb(13, 30, 78);
+    color: white;
+    width: 150px;
+    justify-self: center;
+    font-weight: 700;
+} */
+
+.faux-nav a span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.faux-nav a span:after {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    color: white;
+}
+
+.faux-nav a:hover span {
+    padding-right: 25px;
+    color: white;
+}
+
+.faux-nav a:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.search span:after{
+    font-family: "Font Awesome 5 Free";
+    content: '\f002';
+}
+
+.support span:after{
+    font-family: "Font Awesome 5 Free";
+    content: '\f059';
+}
+
+.settings span:after{
+    font-family: "Font Awesome 5 Free";
+    content: '\f013';
+}
+
+
+.branding {
+    grid-area: brand;
+    margin-left: 1em;
+    color: white;
+    line-height: 0;
+}
+
+.branding img {
+    width: 175px;
+    height: 75px;
+}
+
+.branding p {
+    font-weight: 500;
+    margin-left: .75em;
+}
+
+.log {
+    grid-area: log;
+}
+
+.button {
+    margin-left: .75em;
+    background-color: rgb(66, 74, 92);
+    color: white !important;
+}
+
+
+.register{
+    margin: 0;
+
+}
+
+span p {
+    display: inline;
+    margin-left: 1em;
+}
+
+.errorBucket {
+    background: maroon;
+    color: white;
+    padding: 1em;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.welcome {
+    position: absolute;
+    right: 1.5em;
+    top: 3em;
+    font-size: 1em;
+    color: rgb(113, 203, 219);
+}
+
+span a {
+    color: rgb(18, 155, 47);
+    font-size: 1.3em;
+}
+
+span a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+footer{
+    width: 200px;
+    margin: 30vh auto 0;
+    font-weight: 700;
+    color: rgb(66, 74, 92);
+}
